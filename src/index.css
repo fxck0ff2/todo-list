@@ -32,6 +32,7 @@ main, #root{
 main{
   max-width: 1440px;
   padding: 0 25px;
+  box-sizing: border-box;
 }
 main > div {
   padding-bottom: 20px;

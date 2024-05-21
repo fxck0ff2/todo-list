@@ -8,7 +8,7 @@ export default function ToDoList() {
   const handleAddTask = () => {
     if (newTask.trim() !== '') {
       for (let i = 0; i < tasks.length; i++) { 
-        if (tasks[i] === newTask) { // Якщо така задача э в массиві то неї не добавлять
+        if (tasks[i] == newTask) { // Якщо така задача э в массиві то неї не добавлять
           return;
         }
       }
@@ -18,7 +18,7 @@ export default function ToDoList() {
   }
 
   const handleDeleteTask = (index) => {
-    const currentTasks = tasks.filter((_, i) => i !== index);
+    const currentTasks = tasks.filter((_, i) => i !== index); // Якщо 
     setTask(currentTasks);
   }
   return(
