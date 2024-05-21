@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export default function ToDoList(params) {
+export default function ToDoList() {
   const [tasks, setTask] = useState(['перша задача', 'Друга задача']);
   const [newTask, setNewTask] = useState('');
 
@@ -13,7 +13,6 @@ export default function ToDoList(params) {
         }
       }
       setTask([ ...tasks, newTask.trim() ]);
-      document.querySelector('input').value = '';
       setNewTask('');
     }
   }
@@ -25,7 +24,12 @@ export default function ToDoList(params) {
   return(
     <>
       <div>
-        <input type="text" placeholder="Введіть нове завдання" onChange={(e) => setNewTask(e.target.value)}/>
+        <input 
+          type="text" 
+          placeholder="Введіть нове завдання" 
+          value={newTask} 
+          onChange={(e) => setNewTask(e.target.value)}
+        />
           <button onClick={() => handleAddTask()}>
             <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960"  width="20px" fill="var(--color)">
               <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/>
